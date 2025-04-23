@@ -57,21 +57,6 @@ class _CalculatorState extends State<Calculator> {
     );
   }
 
-  Color buttonColor(String value) {
-    return [ButtonValues.delete, ButtonValues.clear].contains(value)
-        ? Colors.blueGrey
-        : [
-            ButtonValues.per,
-            ButtonValues.multiply,
-            ButtonValues.add,
-            ButtonValues.subtract,
-            ButtonValues.divide,
-            ButtonValues.calculate,
-          ].contains(value)
-            ? Colors.orange
-            : Colors.black87;
-  }
-
   Widget buildButton(String value) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
@@ -102,6 +87,21 @@ class _CalculatorState extends State<Calculator> {
         ),
       ),
     );
+  }
+
+  Color buttonColor(String value) {
+    return [ButtonValues.delete, ButtonValues.clear].contains(value)
+        ? Colors.blueGrey
+        : [
+            ButtonValues.per,
+            ButtonValues.multiply,
+            ButtonValues.add,
+            ButtonValues.subtract,
+            ButtonValues.divide,
+            ButtonValues.calculate,
+          ].contains(value)
+            ? Colors.orange
+            : Colors.black87;
   }
 
   void onButtonTap(String value) {
